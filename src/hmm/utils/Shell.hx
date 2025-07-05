@@ -94,7 +94,7 @@ class Shell {
   }
 
   public static function haxelibGit(name : String, url : String, ref : Option<String>, dir : Option<String>, options: ShellOptions) : Void {
-    var args = ["git", name, url, "--skip-dependencies"].concat(ref.toArray()).concat(dir.toArray());
+    var args = ["git", name, url].concat(ref.toArray()).concat(dir.toArray()).concat(["--skip-dependencies"]);
     return haxelib(args, options);
   }
 
